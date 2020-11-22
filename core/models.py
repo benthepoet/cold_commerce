@@ -6,6 +6,9 @@ class Cart(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=64)
 
+    class Meta:
+        verbose_name_plural = 'Categories'
+
     def __str__(self):
         return self.name
 
@@ -22,4 +25,4 @@ class ProductVariant(models.Model):
     unit_price = models.DecimalField(max_digits=8, decimal_places=2)
 
     def __str__(self):
-        return ("%s - %s" % (self.product.name, self.name))
+        return self.name
