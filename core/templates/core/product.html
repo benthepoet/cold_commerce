@@ -2,17 +2,31 @@
 
 {% block content %}
 
-<div class="box">
-    <h2 class="has-text-weight-normal">{{ product.name }}</h2>
+<nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+        <li>
+            <a href="#">{{ product.category.name }}</a>
+        </li>
+        <li class="is-active mt-0">
+            <a href="#" aria-current="page">{{ product.name }}</a>
+        </li>
+    </ul>
+</nav>
 
-    <div class="columns">
+<div>
+    <h2 class="title is-3 has-text-weight-normal">{{ product.name }}</h2>
+    {% if product.subtitle is not None %}
+    <h4 class="subtitle is-4">{{ product.subtitle }}</h4>
+    {% endif %}
+
+    <div class="columns content">
         <div class="column is-half">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sodales erat erat, eget rutrum magna volutpat eu. Sed in dui interdum, porta justo ut, elementum mauris. Nullam pellentesque urna velit, eu euismod tellus blandit et. Curabitur tincidunt urna quis augue fermentum maximus. Etiam tristique, lectus et sollicitudin pretium, nunc lectus lobortis nisl, ut luctus elit ex vel dolor. Suspendisse ut augue ut ex sagittis hendrerit blandit et nulla. Proin fermentum lectus in efficitur lacinia. Nunc interdum nec urna a accumsan. Proin in massa quam. Sed euismod lacus a neque mattis, quis congue ex vulputate. Maecenas ullamcorper neque sit amet neque commodo, imperdiet tincidunt nibh commodo.</p>
+            {% lorem 3 p %}
         </div>
         <div class="column is-half">
-            <table class="table is-hoverable is-narrow">
+            <table>
                 <thead>
-                    <th>Variant</th>
+                    <th>Product</th>
                     <th>Price</th>
                     <th></th>
                 </thead>

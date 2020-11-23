@@ -15,6 +15,7 @@ class Category(models.Model):
 class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     name = models.CharField(max_length=64)
+    subtitle = models.CharField(max_length=64, null=True)
 
     def __str__(self):
         return self.name

@@ -10,11 +10,21 @@
     </head>
     <body>
 
-        <div class="columns is-desktop is-gapless">
+        <div class="tabs is-centered mb-1">
+            <ul>
+                {% for category in all_categories %}
+                    <li>
+                        <a>{{ category.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="columns is-gapless">
             <div class="column"></div>
             <div class="column is-three-fifths">
 
-                <div class="content mt-4">
+                <div class="mt-4">
                     {% block content %}
                     {% endblock %}
                 </div>
