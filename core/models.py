@@ -1,8 +1,5 @@
 from django.db import models
 
-class Cart(models.Model):
-    pass    
-
 class Category(models.Model):
     name = models.CharField(max_length=64)
 
@@ -27,3 +24,11 @@ class ProductVariant(models.Model):
 
     def __str__(self):
         return self.name
+
+class Cart(models.Model):
+    id = models.CharField(max_length=32, primary_key=True)    
+
+class CartLine(models.Model):
+    cart = models.ForeignKey(Cart, on_delete=models.CASCADE)
+    product_variant = models.ForeignKey(ProductVariant, on_delete=models.CASCADE)
+    quantity = models.IntegerField()

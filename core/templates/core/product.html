@@ -37,9 +37,10 @@
                         <td class="valign-middle">${{ variant.unit_price }}</td>
                         <td class="width-20">
                             <form method="post">
+                                {% csrf_token %}
                                 <div class="field has-addons">
                                     <div class="control">
-                                        <input type="hidden" name="productVariantId" value="{{ variant.id }}">
+                                        <input type="hidden" name="product_variant" value="{{ variant.id }}">
                                         <input type="number" min="1" name="quantity" class="input is-small" value="1" style="width: 64px;" required>
                                     </div>
                                     <div class="control">
