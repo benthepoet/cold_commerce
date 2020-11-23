@@ -13,9 +13,15 @@
         <div class="tabs is-centered mb-1">
             <ul>
                 {% for category in all_categories %}
-                    <li>
-                        <a>{{ category.name }}</a>
-                    </li>
+                    {% if request.resolver_match.kwargs.category_id == category.id %}
+                        <li class="is-active">
+                            <a>{{ category.name }}</a>
+                        </li>
+                    {% else %}
+                        <li>
+                            <a>{{ category.name }}</a>
+                        </li>
+                    {% endif %}
                 {% endfor %}
             </ul>
         </div>
