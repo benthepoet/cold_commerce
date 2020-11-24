@@ -3,20 +3,29 @@
 
 html, body {
     background-color: #eee;
+    
 }
 
 .valign-middle {
     vertical-align: middle !important;
 }
 
-.width-20 {
-    width: 20%;
-}
-
 .title {
     font-weight: 500;
+    margin-bottom: 0.2em;
 }
 
 .subtitle {
     font-weight: 100;
+    font-style: oblique;
+    margin-top: 0.2em;
+    color: #555;
+}
+
+.breadcrumb ul {
+    padding-inline-start: 0;
+}
+
+.breadcrumb li {
+    display: inline-block;
 }

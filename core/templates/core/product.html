@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<nav class="breadcrumb" aria-label="breadcrumbs">
+<nav class="breadcrumb">
     <ul>
         <li>
             <a href="#">{{ product.category.name }}</a>
         </li>
-        <li class="is-active mt-0">
-            <a href="#" aria-current="page">{{ product.name }}</a>
+        <li class="is-active">
+            <a href="#">{{ product.name }}</a>
         </li>
     </ul>
 </nav>
@@ -39,8 +39,8 @@
                             <form method="post" class="pure-form">
                                 {% csrf_token %}
                                 <input type="hidden" name="product_variant" value="{{ variant.id }}">
-                                <input type="number" min="1" name="quantity" class="input is-small" value="1" style="width: 64px;" required>
-                                <button type="submit" class="pure-button is-info is-small">Add to Cart</button>
+                                <input type="number" min="1" name="quantity" value="1" style="width: 64px;" required>
+                                <button type="submit" class="pure-button pure-button-primary">Add to Cart</button>
                             </form>
                         </td>
                     </tr>
