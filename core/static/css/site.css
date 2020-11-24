@@ -46,14 +46,9 @@ html, body {
     content: "\0002f";
 }
 
-.tabs {
-}
-
 .tabs ul {
     list-style: none;
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
+    display: flex;    
     justify-content: center;
     margin: 0;
     padding: 0;
@@ -63,11 +58,8 @@ html, body {
 .tabs a {
     padding: 0.5em 1em;
     display: flex;
-    justify-content: center;
     margin-bottom: -1px;
     border-bottom: 1px solid #eee;
-    align-items: center;
-    vertical-align: top;
 }
 
 .tabs li {
