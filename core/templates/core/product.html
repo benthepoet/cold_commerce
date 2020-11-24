@@ -10,16 +10,16 @@
 </div>
 
 <div>
-    <h1 class="title is-3 has-text-weight-normal">{{ product.name }}</h1>
+    <h1 class="title">{{ product.name }}</h1>
     {% if product.subtitle is not None %}
-    <h2 class="subtitle is-4">{{ product.subtitle }}</h2>
+    <h2 class="subtitle">{{ product.subtitle }}</h2>
     {% endif %}
 
-    <div class="columns content">
-        <div class="column is-half">
+    <div>
+        <div>
             {% lorem 3 p %}
         </div>
-        <div class="column is-half">
+        <div>
             <table class="pure-table">
                 <thead>
                     <th>Product</th>

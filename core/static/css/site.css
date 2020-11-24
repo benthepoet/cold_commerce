@@ -1,11 +1,29 @@
 @import url('pure/pure-min.css');
 @import url('pure/grids-responsive-min.css');
 @import url('open-iconic/font/css/open-iconic.min.css');
+@import url('menu.css');
 
 html, body {
     background-color: #fff;
     color: #888;
     line-height: 1.6em;
+}
+
+a {
+    color:  #0078e7;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #333;
+}
+
+.p-1 {
+    padding: 1em;
+}
+
+.text-center {
+    text-align: center;
 }
 
 .valign-middle {
@@ -61,7 +79,6 @@ html, body {
     display: flex;
     margin-bottom: -1px;
     border-bottom: 1px solid #eee;
-    text-decoration: none;
     color: #888;
 }
 
@@ -81,7 +98,11 @@ html, body {
 }
 
 .link-back {
-    text-decoration: none;
     margin-top: 1em;
     display: block;
+}
+
+.link-image {
+    display: block;
+    background-color: #eee;
 }
