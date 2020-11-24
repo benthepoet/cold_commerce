@@ -104,5 +104,20 @@ a:hover {
 
 .link-image {
     display: block;
-    background-color: #eee;
+}
+
+.link-image:hover {
+    background-color: #f9f9f9;
+}
+
+.link-image div {
+    font-size: 1.2em;
+    color: #777;
+    padding-top: 0.5em;
+}
+
+.link-image div span {
+    color: #aaa; 
+    font-size: 0.8em;
+    font-style: oblique;
 }
