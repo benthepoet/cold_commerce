@@ -14,9 +14,9 @@
 </nav>
 
 <div>
-    <h2 class="title is-3 has-text-weight-normal">{{ product.name }}</h2>
+    <h1 class="title is-3 has-text-weight-normal">{{ product.name }}</h1>
     {% if product.subtitle is not None %}
-    <h4 class="subtitle is-4">{{ product.subtitle }}</h4>
+    <h2 class="subtitle is-4">{{ product.subtitle }}</h2>
     {% endif %}
 
     <div class="columns content">
@@ -24,7 +24,7 @@
             {% lorem 3 p %}
         </div>
         <div class="column is-half">
-            <table>
+            <table class="pure-table">
                 <thead>
                     <th>Product</th>
                     <th>Price</th>
@@ -35,18 +35,12 @@
                     <tr>
                         <td class="valign-middle">{{ variant.name }}</td>
                         <td class="valign-middle">${{ variant.unit_price }}</td>
-                        <td class="width-20">
-                            <form method="post">
+                        <td>
+                            <form method="post" class="pure-form">
                                 {% csrf_token %}
-                                <div class="field has-addons">
-                                    <div class="control">
-                                        <input type="hidden" name="product_variant" value="{{ variant.id }}">
-                                        <input type="number" min="1" name="quantity" class="input is-small" value="1" style="width: 64px;" required>
-                                    </div>
-                                    <div class="control">
-                                        <button type="submit" class="button is-info is-small">Add to Cart</button>
-                                    </div>
-                                </div>
+                                <input type="hidden" name="product_variant" value="{{ variant.id }}">
+                                <input type="number" min="1" name="quantity" class="input is-small" value="1" style="width: 64px;" required>
+                                <button type="submit" class="pure-button is-info is-small">Add to Cart</button>
                             </form>
                         </td>
                     </tr>
