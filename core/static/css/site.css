@@ -2,8 +2,9 @@
 @import url('open-iconic/font/css/open-iconic.min.css');
 
 html, body {
-    background-color: #eee;
-    
+    background-color: #fff;
+    color: #888;
+    line-height: 1.6em;
 }
 
 .valign-middle {
@@ -13,19 +14,68 @@ html, body {
 .title {
     font-weight: 500;
     margin-bottom: 0.2em;
+    color: #777;
 }
 
 .subtitle {
     font-weight: 100;
     font-style: oblique;
     margin-top: 0.2em;
-    color: #555;
+    color: #aaa;
 }
 
 .breadcrumb ul {
     padding-inline-start: 0;
+    text-decoration: none;
 }
 
 .breadcrumb li {
     display: inline-block;
+}
+.breadcrumb li:first-child a {
+    padding-left: 0;
+}
+
+.breadcrumb li a {
+    text-decoration: none;
+    padding: 0.2em;
+}
+
+.breadcrumb li+li::before {
+    color: #b5b5b5;
+    content: "\0002f";
+}
+
+.tabs {
+}
+
+.tabs ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    border-bottom: solid 1px #eee;
+}
+
+.tabs a {
+    padding: 0.5em 1em;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -1px;
+    border-bottom: 1px solid #eee;
+    align-items: center;
+    vertical-align: top;
+}
+
+.tabs li {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.tabs li.is-active a {
+    border-bottom: solid 1px #0078e7;
 }
