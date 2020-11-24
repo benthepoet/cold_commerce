@@ -1,4 +1,5 @@
 @import url('pure/pure-min.css');
+@import url('pure/grids-responsive-min.css');
 @import url('open-iconic/font/css/open-iconic.min.css');
 
 html, body {
