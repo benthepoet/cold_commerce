@@ -1,12 +1,22 @@
 from django.shortcuts import render
 
 from .forms import ProductVariantForm
-from .models import Cart, CartLine, Product, ProductVariant
+from .models import Cart, CartLine, Category, Product, ProductVariant
 
 def index(request):
     return render(request, 'core/index.html')
 
-def product(request, id, category_id):
+def category(request, category_id):
+    category = Category.objects.get(pk=category_id)
+    products = Product.objects.filter(category=category)
+    context = {
+        'category': category,
+        'products': products
+        }
+
+    return render(request, 'core/category.html', context)
+
+def product(request, product_id, category_id):
     if request.method == 'POST':
         form = ProductVariantForm(request.POST)
         if form.is_valid():
@@ -25,8 +35,8 @@ def product(request, id, category_id):
             cart_line = CartLine(cart=cart, product_variant=ProductVariant(id=product_variant), quantity=quantity)
             cart_line.save()
 
-    product = Product.objects.get(pk=id)
-    variants = ProductVariant.objects.filter(product=id)
+    product = Product.objects.get(pk=product_id)
+    variants = ProductVariant.objects.filter(product=product)
     context = {
         'product': product, 
         'variants': variants
