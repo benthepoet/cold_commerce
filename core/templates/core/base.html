@@ -10,6 +10,19 @@
     </head>
     <body>
 
+        <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+            <div class="navbar-end">
+                <a class="navbar-item">Shop</a>
+                <a class="navbar-item">About</a>
+                <div class="navbar-item">
+                    <a class="button button-primary">
+                        <span class="oi" data-glyph="cart"></span>
+                        <span class="pl-2">5</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
         <div class="tabs is-centered mb-1">
             <ul>
                 {% for category in all_categories %}
