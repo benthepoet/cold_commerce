@@ -2,16 +2,12 @@
 
 {% block content %}
 
-<nav class="breadcrumb">
-    <ul>
-        <li>
-            <a href="#">{{ product.category.name }}</a>
-        </li>
-        <li class="is-active">
-            <a>{{ product.name }}</a>
-        </li>
-    </ul>
-</nav>
+<div>
+    <a class="link-back" href="#">
+        <span class="oi" data-glyph="arrow-left"></span>
+        Back to Trees
+    </a>
+</div>
 
 <div>
     <h1 class="title is-3 has-text-weight-normal">{{ product.name }}</h1>

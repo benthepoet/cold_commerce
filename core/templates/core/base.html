@@ -15,11 +15,11 @@
                 {% for category in all_categories %}
                     {% if request.resolver_match.kwargs.category_id == category.id %}
                         <li class="is-active">
-                            <a>{{ category.name }}</a>
+                            <a href="/category/{{ category.id }}">{{ category.name }}</a>
                         </li>
                     {% else %}
                         <li>
-                            <a>{{ category.name }}</a>
+                            <a href="/category/{{ category.id }}">{{ category.name }}</a>
                         </li>
                     {% endif %}
                 {% endfor %}

@@ -60,6 +60,12 @@ html, body {
     display: flex;
     margin-bottom: -1px;
     border-bottom: 1px solid #eee;
+    text-decoration: none;
+    color: #888;
+}
+
+.tabs a:hover {
+    border-bottom: 1px solid #888;
 }
 
 .tabs li {
@@ -69,5 +75,12 @@ html, body {
 }
 
 .tabs li.is-active a {
+    color: #0078e7;
     border-bottom: solid 1px #0078e7;
+}
+
+.link-back {
+    text-decoration: none;
+    margin-top: 1em;
+    display: block;
 }
