@@ -1,0 +1,28 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+    <h1 class="title">Shopping Cart</h1>
+
+    <table class="pure-table mt-2">
+        <thead>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th></th>
+        </thead>
+        <tbody>
+            {% for cartline in cartlines %}
+                <tr>
+                    <td>{{ cartline.product_variant.product.name }} - {{ cartline.product_variant.name }}</td>
+                    <td>{{ cartline.quantity }}</td>
+                    <td>
+                        <button class="pure-button pure-button-primary">
+                            Remove
+                        </button>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

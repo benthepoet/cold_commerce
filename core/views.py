@@ -6,6 +6,20 @@ from .models import Cart, CartLine, Category, Product, ProductVariant
 def index(request):
     return render(request, 'core/index.html')
 
+def cart(request):
+    cart = request.session.session_key
+
+    if cart is None:
+        cartlines = []
+    else:
+        cartlines = CartLine.objects.filter(cart=cart)
+
+    context = {
+        'cartlines': cartlines
+    }
+
+    return render(request, 'core/cart.html', context)
+
 def category(request, category_id):
     category = Category.objects.get(pk=category_id)
     products = Product.objects.filter(category=category)
