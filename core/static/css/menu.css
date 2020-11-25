@@ -111,7 +111,7 @@ small screens.
     z-index: 10;
     width: 2em;
     height: auto;
-    padding: 2.1em 1.6em;
+    padding: 2em 1.6em;
 }
 
     .menu-link:hover,
@@ -183,13 +183,13 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     }
 
     #layout,
-#menu,
-.menu-link {
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-}
+    #menu,
+    .menu-link {
+        -webkit-transition: all 0.2s ease-out;
+        -moz-transition: all 0.2s ease-out;
+        -ms-transition: all 0.2s ease-out;
+        -o-transition: all 0.2s ease-out;
+        transition: all 0.2s ease-out;
+    }
 
 }

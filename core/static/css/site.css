@@ -121,3 +121,17 @@ a:hover {
     font-size: 0.8em;
     font-style: oblique;
 }
+
+.cart {
+    position: fixed;
+    top: 0;
+    background-color:#191818;
+    z-index: 20;
+    right: 0;
+    padding: 0.5em 1em;
+    color: #fff;
+}
+
+.cart span.oi {
+    padding-right: 0.5em;
+}
