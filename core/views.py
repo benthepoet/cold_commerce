@@ -32,7 +32,12 @@ def product(request, product_id, category_id):
             product_variant = form.cleaned_data['product_variant']
             quantity = form.cleaned_data['quantity']
 
-            cart_line = CartLine(cart=cart, product_variant=ProductVariant(id=product_variant), quantity=quantity)
+            try:
+                cart_line = CartLine.objects.get(cart=cart, product_variant=product_variant)
+                cart_line.quantity += quantity
+            except CartLine.DoesNotExist:
+                cart_line = CartLine(cart=cart, product_variant=ProductVariant(id=product_variant), quantity=quantity)
+
             cart_line.save()
 
     product = Product.objects.get(pk=product_id)
