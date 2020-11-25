@@ -149,6 +149,17 @@ a:hover {
     padding-right: 0.5em;
 }
 
+.cart-product {
+    font-weight: 600;
+    color: #777;
+}
+
+.cart-product-variant {
+    font-size: 90%;
+    padding-left: 1em;
+    color: #888;
+}
+
 .brand {
     font-family: "Segoe UI Light";
     color: #fff;

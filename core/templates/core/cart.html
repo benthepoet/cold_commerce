@@ -13,11 +13,22 @@
         <tbody>
             {% for cartline in cartlines %}
                 <tr>
-                    <td>{{ cartline.product_variant.product.name }} - {{ cartline.product_variant.name }}</td>
-                    <td>{{ cartline.quantity }}</td>
                     <td>
-                        <button class="pure-button pure-button-primary">
-                            Remove
+                        <span class="cart-product">{{ cartline.product_variant.product.name }}</span>
+                        <br>
+                        <span class="cart-product-variant">{{ cartline.product_variant.name }}</span>
+                    </td>
+                    <td>
+                        <form class="pure-form">
+                            <input type="number" name="quantity" min="1" value="{{ cartline.quantity }}" style="width: 100px;">
+                            <button class="pure-button pure-button-primary">
+                                <span class="oi" data-glyph="loop-circular"></span>
+                            </button>
+                        </form>
+                    </td>
+                    <td>
+                        <button class="pure-button pure-button-primary" style="background: rgb(202, 60, 60);">
+                            <span class="oi" data-glyph="x" style="font-size: 75%;"></span>
                         </button>
                     </td>
                 </tr>
